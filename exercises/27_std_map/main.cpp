@@ -6,11 +6,17 @@
 
 template<class k, class v>
 bool key_exists(std::map<k, v> const &map, k const &key) {
+    return map.find(key)!=map.end();
     // TODO: 实现函数
 }
 
 template<class k, class v>
 void set(std::map<k, v> &map, k key, v value) {
+    if(map.find(key)==map.end()){
+        map.insert(std::pair<k,v>(key,value));
+    }else{
+        map[key]=value;
+    }   
     // TODO: 实现函数
 }
 
